@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdul Basit | Front-End & WordPress Developer Portfolio</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Custom styles for professional background and smoothness */
+        :root {
+            scroll-behavior: smooth;
+        }
+        body {
+            /* Dark background with a subtle radial gradient for depth */
+            background-color: #0d121c; /* Almost black */
+            background-image: radial-gradient(at 0% 0%, #1e3a8a30 0%, transparent 50%),
+                              radial-gradient(at 100% 100%, #3730a320 0%, transparent 50%);
+            color: #e2e8f0; 
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden; /* Prevents horizontal scrolling from dynamic elements */
+        }
+        .section-padding {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+        /* Enhanced Card styling */
+        .professional-card {
+            background-color: #1a202c; /* slate-900 */
+            transition: all 0.3s ease-in-out;
+        }
+        .professional-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.2); /* Soft indigo shadow on hover */
+            border-color: #4f46e5; /* indigo-600 */
+        }
+        /* Custom Typing effect cursor */
+        #dynamic-title::after {
+            content: '|';
+            display: inline;
+            animation: blink-caret .75s step-end infinite;
+        }
+        @keyframes blink-caret {
+            from, to { color: transparent; }
+            50% { color: #93c5fd; } /* blue-300 */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="fixed top-0 left-0 right-0 bg-gray-900/90 backdrop-blur-md shadow-lg z-50 border-b border-indigo-900/70">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-extrabold text-white tracking-wider hover:text-indigo-400 transition">
+                Abdul<span class="text-indigo-400"> Basit</span>
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-8 font-medium">
+                <a href="#home" class="text-slate-300 hover:text-indigo-300 transition hover:border-b-2 hover:border-indigo-400 pb-1">Home</a>
+                <a href="#about" class="text-slate-300 hover:text-indigo-300 transition hover:border-b-2 hover:border-indigo-400 pb-1">About Me</a>
+                <a href="#services" class="text-slate-300 hover:text-indigo-300 transition hover:border-b-2 hover:border-indigo-400 pb-1">My Services</a>
+                <a href="#contact" class="text-slate-300 hover:text-indigo-300 transition hover:border-b-2 hover:border-indigo-400 pb-1">Contact Me</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-slate-200 hover:text-indigo-400 transition p-2 rounded-lg">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <nav id="mobile-menu" class="hidden md:hidden bg-gray-800/95 py-4 border-t border-indigo-900/50">
+            <div class="flex flex-col space-y-3 px-4">
+                <a href="#home" class="text-slate-200 hover:bg-gray-700 p-2 rounded-lg transition" onclick="toggleMenu()">Home</a>
+                <a href="#about" class="text-slate-200 hover:bg-gray-700 p-2 rounded-lg transition" onclick="toggleMenu()">About Me</a>
+                <a href="#services" class="text-slate-200 hover:bg-gray-700 p-2 rounded-lg transition" onclick="toggleMenu()">My Services</a>
+                <a href="#contact" class="text-slate-200 hover:bg-gray-700 p-2 rounded-lg transition" onclick="toggleMenu()">Contact Me</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home Section (Enhanced with Typing Effect) -->
+        <section id="home" class="section-padding pt-32 min-h-screen flex items-center bg-transparent">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                
+                <!-- Profile Avatar -->
+                <!-- Replace the 'src' link below with the URL of your actual profile picture -->
+                <img src="https://placehold.co/128x128/1e293b/94a3b8?text=AB" alt="Profile Avatar" 
+                     class="w-36 h-36 rounded-full mx-auto mb-8 object-cover border-4 border-indigo-500 shadow-2xl shadow-indigo-500/30 transition transform hover:scale-105">
+
+                <p class="text-indigo-400 text-xl font-medium mb-3">Hello World, I'm</p>
+                <h1 class="text-6xl md:text-8xl font-extrabold text-white mb-4 leading-tight tracking-tighter">
+                    Abdul Basit
+                </h1>
+                
+                <!-- Dynamic Typing Title using JavaScript -->
+                <p class="text-3xl md:text-4xl font-light text-slate-300 mb-10 h-10">
+                    FSc Student & <span id="dynamic-title" class="text-indigo-300 font-semibold"></span>
+                </p>
+
+                <p class="max-w-4xl mx-auto text-slate-400 mb-12 text-lg">
+                    I am a highly motivated Front-End Web Developer and a certified **WordPress Expert**. I specialize in creating pixel-perfect, responsive websites—from clean portfolio pages to robust e-commerce solutions.
+                </p>
+
+                <div class="flex justify-center space-x-6">
+                    <a href="#contact" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-10 rounded-full shadow-lg shadow-indigo-600/50 transition transform hover:scale-105 hover:shadow-indigo-500/70">
+                        Hire Me
+                    </a>
+                    <a href="#about" class="bg-slate-700 hover:bg-slate-600 text-slate-200 font-bold py-3 px-10 rounded-full shadow-lg transition transform hover:scale-105">
+                        My Journey
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="section-padding bg-gray-900 border-t border-indigo-900/50">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center text-white mb-4">About My Journey</h2>
+                <p class="text-xl text-center text-slate-400 mb-16 max-w-3xl mx-auto">
+                    Combining academic focus with professional web development expertise.
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <p class="text-slate-300 mb-4 leading-relaxed text-lg">
+                            Hello! I am **Abdul Basit**, a passionate Front-End Developer and versatile **WordPress Expert** currently pursuing my FSc. I am driven by the process of turning creative designs into functional, high-performing websites.
+                        </p>
+                        <p class="text-slate-300 mb-6 leading-relaxed text-lg">
+                            My focus is on two key areas: creating bespoke, modern user interfaces with core web technologies (HTML, CSS, JS), and leveraging the power of WordPress to build scalable, easy-to-manage solutions for various client needs—including business portals and comprehensive e-commerce stores.
+                        </p>
+                        
+                        <div class="bg-indigo-900/20 p-6 rounded-xl border border-indigo-700/50 space-y-3">
+                            <h4 class="text-lg font-semibold text-indigo-300">Quick Facts:</h4>
+                            <ul class="space-y-2 text-slate-300">
+                                <li class="flex items-center space-x-2"><i data-lucide="user" class="w-5 h-5 text-indigo-400"></i><span>Name: Abdul Basit</span></li>
+                                <li class="flex items-center space-x-2"><i data-lucide="graduation-cap" class="w-5 h-5 text-indigo-400"></i><span>Current Status: FSc Student</span></li>
+                                <li class="flex items-center space-x-2"><i data-lucide="zap" class="w-5 h-5 text-indigo-400"></i><span>Specialty: Front-End & WordPress Development</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Skills/Tech Stack -->
+                    <div class="professional-card bg-gray-800 p-8 rounded-2xl shadow-2xl border border-gray-700">
+                        <h3 class="text-3xl font-bold text-white mb-6 border-b border-indigo-700 pb-2">Technical Arsenal</h3>
+                        <div class="flex flex-wrap gap-4">
+                            <span class="skill-badge">HTML5 & CSS3</span>
+                            <span class="skill-badge">JavaScript (ES6+)</span>
+                            <span class="skill-badge">Responsive Design</span>
+                            <span class="skill-badge">Tailwind CSS</span>
+                            <span class="skill-badge">UI/UX Principles</span>
+                            <span class="skill-badge text-yellow-300 bg-yellow-900/50 border-yellow-700">WordPress Development</span>
+                            <span class="skill-badge text-yellow-300 bg-yellow-900/50 border-yellow-700">E-commerce (WooCommerce)</span>
+                            <span class="skill-badge">Web Design</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- My Services Section -->
+        <section id="services" class="section-padding bg-transparent border-t border-indigo-900/50">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center text-white mb-4">Professional Services</h2>
+                <p class="text-xl text-center text-slate-400 mb-16 max-w-3xl mx-auto">
+                    I offer comprehensive solutions for modern web presence.
+                </p>
+
+                <div class="grid md:grid-cols-3 gap-10">
+                    <!-- Service 1: Custom Front-End Development -->
+                    <div class="professional-card bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-700">
+                        <i data-lucide="code" class="w-12 h-12 text-indigo-400 mb-4 p-2 rounded-lg bg-indigo-900/40"></i>
+                        <h3 class="text-2xl font-semibold text-white mb-3">Custom Front-End</h3>
+                        <p class="text-slate-400">Building fast, dynamic, and clean code for bespoke websites and applications using modern frameworks like Tailwind CSS and JavaScript.</p>
+                    </div>
+
+                    <!-- Service 2: WordPress Development & Business Sites (Updated) -->
+                    <div class="professional-card bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-700">
+                        <i data-lucide="database" class="w-12 h-12 text-yellow-400 mb-4 p-2 rounded-lg bg-yellow-900/40"></i>
+                        <h3 class="text-2xl font-semibold text-white mb-3">WordPress Solutions</h3>
+                        <p class="text-slate-400">Complete WordPress development, including custom themes, plugin integration, and reliable setup for business websites and portfolio sites.</p>
+                    </div>
+
+                    <!-- Service 3: E-commerce Stores (Updated) -->
+                    <div class="professional-card bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-700">
+                        <i data-lucide="shopping-cart" class="w-12 h-12 text-green-400 mb-4 p-2 rounded-lg bg-green-900/40"></i>
+                        <h3 class="text-2xl font-semibold text-white mb-3">E-commerce Stores</h3>
+                        <p class="text-slate-400">Designing and developing functional online stores using WooCommerce and other platforms, focusing on conversions and user experience.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Me Section -->
+        <section id="contact" class="section-padding bg-gray-900 border-t border-indigo-900/50">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center text-white mb-4">Let's Connect</h2>
+                <p class="text-xl text-center text-slate-400 mb-16 max-w-3xl mx-auto">
+                    Ready to start a project? Send me a message or find my direct contact details below.
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-12">
+                    
+                    <!-- Contact Form (Enhanced Styling) -->
+                    <div class="professional-card bg-gray-800 p-8 rounded-2xl shadow-xl border border-indigo-700">
+                        <h3 class="text-2xl font-semibold text-white mb-6">Send Me a Message</h3>
+                        <form id="contact-form" class="space-y-5">
+                            <div>
+                                <label for="name" class="block text-slate-300 font-medium mb-1">Your Name</label>
+                                <input type="text" id="name" name="name" required class="w-full p-3 rounded-lg bg-gray-900 border border-gray-700 text-white focus:ring-indigo-500 focus:border-indigo-500 transition">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-slate-300 font-medium mb-1">Your Email</label>
+                                <input type="email" id="email-input" name="email" required class="w-full p-3 rounded-lg bg-gray-900 border border-gray-700 text-white focus:ring-indigo-500 focus:border-indigo-500 transition">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-slate-300 font-medium mb-1">Your Message</label>
+                                <textarea id="message" name="message" rows="5" required class="w-full p-3 rounded-lg bg-gray-900 border border-gray-700 text-white focus:ring-indigo-500 focus:border-indigo-500 transition"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-xl transition duration-300 transform hover:scale-[1.01] shadow-lg shadow-indigo-600/40">
+                                Send Message
+                            </button>
+                            <div id="form-message" class="mt-4 text-center text-base font-medium hidden"></div>
+                        </form>
+                    </div>
+
+                    <!-- Contact Information Card (UPDATED WITH YOUR DETAILS) -->
+                    <div class="professional-card bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-700 space-y-6">
+                        <h3 class="text-2xl font-semibold text-white mb-4 border-b border-gray-700 pb-3">Direct Contact</h3>
+                        
+                        <div class="flex items-start space-x-4">
+                            <i data-lucide="mail" class="w-6 h-6 text-indigo-400 mt-1 flex-shrink-0"></i>
+                            <div>
+                                <p class="text-slate-400 font-medium">Email</p>
+                                <a href="mailto:abdulbasitwebs1@gmail.com" class="text-white text-lg hover:text-indigo-300 transition">abdulbasitwebs1@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <i data-lucide="phone" class="w-6 h-6 text-indigo-400 mt-1 flex-shrink-0"></i>
+                            <div>
+                                <p class="text-slate-400 font-medium">Phone</p>
+                            <p class="text-white text-lg">03415020046</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <i data-lucide="map-pin" class="w-6 h-6 text-indigo-400 mt-1 flex-shrink-0"></i>
+                            <div>
+                                <p class="text-slate-400 font-medium">Address</p>
+                                <p class="text-white text-lg">
+                                    Village Haji Qamar, Tehseel Oghi <br>
+                                    District Mansehra, KPK, Pakistan
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 border-t border-indigo-900/50 py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-slate-500 text-sm">
+                &copy; <span id="current-year"></span> Abdul Basit. All rights reserved. | Developed with passion and modern web technologies.
+            </p>
+            <div class="flex justify-center space-x-4 mt-4">
+                <!-- Add links to your social media or GitHub here -->
+                <a href="#" class="text-slate-400 hover:text-indigo-400 transition transform hover:scale-110"><i data-lucide="github" class="w-6 h-6"></i></a>
+                <a href="#" class="text-slate-400 hover:text-indigo-400 transition transform hover:scale-110"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactivity and Professional Effects -->
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // 1. Mobile Menu Toggle
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+        document.getElementById('mobile-menu-button').addEventListener('click', toggleMenu);
+
+        // 2. Typing Animation Effect (Professional Style Upgrade)
+        const titles = ["Front-End Web Developer", "WordPress Expert", "Web Designer", "Responsive Builder"];
+        let titleIndex = 0;
+        let charIndex = 0;
+        const speed = 75; // Typing speed in ms
+        const deleteSpeed = 50;
+        const delay = 1500; // Delay before starting next title
+        const dynamicTitleElement = document.getElementById('dynamic-title');
+
+        function typeTitle() {
+            const currentTitle = titles[titleIndex % titles.length];
+            if (charIndex < currentTitle.length) {
+                dynamicTitleElement.textContent += currentTitle.charAt(charIndex);
+                charIndex++;
+                setTimeout(typeTitle, speed);
+            } else {
+                setTimeout(deleteTitle, delay);
+            }
+        }
+
+        function deleteTitle() {
+            const currentTitle = titles[titleIndex % titles.length];
+            if (charIndex > 0) {
+                dynamicTitleElement.textContent = currentTitle.substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(deleteTitle, deleteSpeed);
+            } else {
+                titleIndex++;
+                setTimeout(typeTitle, speed * 2); 
+            }
+        }
+
+        // Start the typing animation when the page loads
+        window.onload = function() {
+            typeTitle();
+        };
+
+
+        // 3. Form submission handler (simulated)
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formMessage = document.getElementById('form-message');
+            
+            // Show success message
+            formMessage.classList.remove('hidden', 'text-red-400');
+            formMessage.classList.add('text-green-400');
+            formMessage.textContent = 'Thank you for reaching out! Your message has been sent (Simulated). I will reply soon.';
+
+            // Clear the form fields after a short delay
+            setTimeout(() => {
+                document.getElementById('contact-form').reset();
+                formMessage.classList.add('hidden');
+            }, 4000); // Hide message after 4 seconds
+        });
+
+        // 4. Set current year in the footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // 5. Add skill badge styling
+        document.querySelectorAll('.skill-badge').forEach(badge => {
+            if (!badge.classList.contains('text-yellow-300')) {
+                // Default styling for non-WordPress badges
+                badge.classList.add('bg-indigo-900/50', 'text-indigo-200', 'border', 'border-indigo-700', 'text-sm', 'font-medium', 'px-4', 'py-1.5', 'rounded-full', 'shadow-md');
+            } else {
+                // Specific styling for WordPress badges
+                badge.classList.add('border', 'text-sm', 'font-medium', 'px-4', 'py-1.5', 'rounded-full', 'shadow-md');
+            }
+        });
+    </script>
+</body>
+</html>
